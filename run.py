@@ -1,22 +1,25 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import requests
+import json
 from BeautifulSoup import BeautifulSoup
+from ConfigParser import SafeConfigParser
 
-phones = [
-'apple-iphone6s-16Go-argent',
-'apple-iphone6-plus-16go-or',
-'samsung-galaxy-note7-noir'
- ]
-base_url = 'http://shop.sosh.fr/mobile/'
+# LOAD CONFIGURATION
+config = SafeConfigParser()
+config.read('config.ini')
+phones = json.loads(config.get("configuration","phones"))
+base_url = config.get("configuration","base_url")
+
+# DEFINE HANDLE FUNCTIONS
 def handleAvailable(phone):
     print phone + ' est disponible'
-
 def handleUnAvailable(phone):
     print phone + ' est indisponible'
 def handlePreOrder(phone):
-    print phone + ' est disponible en précommande'
+    print phone + ' est disponible en precommande'
 
+# CHECK
 for phone in phones:
     url = base_url + phone
     response = requests.get(url)
