@@ -1,2 +1,3 @@
+pushbullet.py==0.10.0
 requests==2.11.1
 BeautifulSoup==3.2.1
