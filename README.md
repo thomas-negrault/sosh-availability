@@ -13,6 +13,7 @@ The script monitor a list of mobile phones and send a notification when one of t
 - For https://shop.sosh.fr/mobile/apple-iphone6s-64Go-argent put *apple-iphone6s-64Go-argent* in the array
 - Set the interval (in seconds)
 - Put your phpbullet token (go to https://www.pushbullet.com/#settings/account and click on "Create Access Token")
+
 Then run the script:
 
 ```
